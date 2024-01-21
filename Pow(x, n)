@@ -1,0 +1,30 @@
+class Solution {
+    public double myPow(double x, int n) {
+        if(n>=0)
+            return positive(x,n);
+            else
+            return negative(x,n);
+    } 
+    private double negative (double x, int n){
+        if(n==-1)
+        return 1/x;
+     double smallerOutput = myPow(x,n/2);   // divide into smaller part me
+     if(n%2==0)
+         return smallerOutput*smallerOutput;
+         else
+         return (1/x)*smallerOutput*smallerOutput;     
+    }
+
+    private double positive (double x, int n){
+        if(n==0)
+        return 1;
+        double smallerOutput = myPow(x,n/2);
+        if(n%2==0)
+            return smallerOutput*smallerOutput;
+            else
+            return  x*smallerOutput*smallerOutput;
+        
+    }
+    }
+
+https://leetcode.com/problems/powx-n/

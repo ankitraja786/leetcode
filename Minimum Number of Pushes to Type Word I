@@ -1,0 +1,23 @@
+class Solution {
+    public int minimumPushes(String word) {
+        int n = word.length();
+        int ans =0;                                                           // 8 = number button in mob
+                                                                                //  n = length of word
+       int i=1;
+         while (n > 0){
+             if(n>8){
+                 ans += 8 * i;       //// Each group of 8 requires 8 pushes
+             } else{
+                 ans += n*i;
+             }
+             i++;
+             n-=8;
+             
+             
+         }
+          return ans;
+    }
+}
+
+
+https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/
